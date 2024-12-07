@@ -1,0 +1,89 @@
+:root {
+    --bgc: lightblue;
+    --headerColor: rgb(84, 189, 225);
+    --accentColor: sandybrown;
+    --bookColor: salmon;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    min-height: 100vh;
+}
+
+.library-container {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bgc);
+}
+
+.library {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    ;
+}
+
+.book {
+    background-size: contain;
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 35%;
+    padding-top: 10%;
+}
+
+.deleteBtn {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-image: url(img/delete-2-svgrepo-com.svg);
+}
+
+
+
+::backdrop {
+    background-image: linear-gradient(45deg,
+            magenta,
+            rebeccapurple,
+            dodgerblue,
+            green);
+    opacity: 0.75;
+}
+
+.red-book {
+    background-image: url("img/red-book.svg");
+}
+
+.green-book {
+    background-image: url("img/green-book.svg");
+}
+
+.blue-book {
+    background-image: url("img/blue-book.svg");
+}
+
+
+/* .read-status {} */
+.not-read {
+    background-image: url("img/glasses-off-svgrepo-com.svg");
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-color: red;
+}
+
+.read {
+    background-image: url("img/glasses-svgrepo-com.svg");
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-color: green;
+}

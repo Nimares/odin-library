@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Nikolai's Library</h1>
+            <nav>
+                <button class="add">Add book</button>
+                <button class="remove">Remove book</button>
+            </nav>
+            <dialog id="bookDialog">
+                <form action="">
+                    <label for="bookTitle">Title:
+                        <input id="bookTitle" type="text">
+                    </label>
+                    <label for="bookAuthor">Author:
+                        <input id=bookAuthor type="text">
+                    </label>
+                    <label for="bookPages">Pages:
+                        <input id=bookPages type="text">
+                    </label>
+                    <label for="bookRead">Read:
+                        <input type="checkbox" name="bookRead" id="bookRead">
+                    </label>
+                    <div>
+                        <button id="confirmBtn">Confirm</button>
+        
+                        <!-- formmethod="dialog": state saved, default GET method overwritten, nothing submitted  -->
+                        <button autofocus value="cancel" formmethod="dialog">Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+        </header>
+        <div class="library-container">
+            <output></output>
+            <div class="library">
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+    </html>
+</body>
+</html>

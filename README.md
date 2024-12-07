@@ -35,4 +35,9 @@ Optional:
 - try dark/light mode
 
 Approach: 
-    
+
+Log: 
+- 07.12.24: 
+    Goal: reorganize book structure. Currently site is functional, but it does not look appealing. Responsive elements are too responsive. 
+
+    Approach: Remove visual aspects. Make a working card-style display. Once this is working, I can re-add styles. 

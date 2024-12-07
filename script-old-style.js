@@ -72,6 +72,7 @@ function displayBook(book) {
     const bookTitle = document.createElement("h2");
     const bookAuthor = document.createElement("p");
     const bookPages = document.createElement("p");
+    const bookReadStatus = document.createElement("p");
 
     // Need to add event listener on creation.
     // Trying to add eventlistener after creation caused issues
@@ -87,8 +88,6 @@ function displayBook(book) {
 
 
     const readStatusBtn = document.createElement("button");
-
-    // 05.12.24 add default class for read status (for use later for "on") 
     readStatusBtn.classList.add("read-status");
 
     if (book.read === true) {
@@ -113,6 +112,7 @@ function displayBook(book) {
     bookTitle.innerHTML = book.title;
     bookAuthor.innerHTML = book.author;
     bookPages.innerHTML = book.pages;
+    bookReadStatus.innerHTML = book.read;
 
     bookDisplay.classList.add("book");
     bookDisplay.classList.add(generateRandomStyle());
@@ -120,6 +120,7 @@ function displayBook(book) {
     bookDisplay.appendChild(bookTitle);
     bookDisplay.appendChild(bookAuthor);
     bookDisplay.appendChild(bookPages);
+    bookDisplay.appendChild(bookReadStatus);
     bookDisplay.appendChild(deleteBtn);
     bookDisplay.appendChild(readStatusBtn);
     library.appendChild(bookDisplay);

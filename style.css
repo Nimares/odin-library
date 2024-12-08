@@ -28,13 +28,30 @@ html {
     ;
 }
 
-.book {
+/* .book {
     background-size: contain;
     background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     background-position: center;
     padding-left: 35%;
     padding-top: 10%;
+    border: 5px solid black
+} */
+
+.book-card {
+    border: 5px black dotted;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-card--image {
+    background-color: beige;
+    height: 250px;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .deleteBtn {

@@ -68,15 +68,26 @@ function generateRandomStyle() {
 
 // Adds book to library display
 function displayBook(book) {
-    const bookDisplay = document.createElement("div");
+    const bookCard = document.createElement("div");
+    const bookImageContainer = document.createElement("div");
+    const bookInfoContainer = document.createElement("div");
+    const bookOptionsContainer = document.createElement("div");
+
+    // const bookDisplay = document.createElement("div"); // Alter name in all areas
     const bookTitle = document.createElement("h2");
     const bookAuthor = document.createElement("p");
     const bookPages = document.createElement("p");
 
+
+    const deleteBtn = document.createElement("button");
+    const readStatusBtn = document.createElement("button");
+
     // Need to add event listener on creation.
     // Trying to add eventlistener after creation caused issues
-    const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("deleteBtn");
+
+    // 05.12.24 add default class for read status (for use later for "on") 
+    readStatusBtn.classList.add("read-status");
 
     // Delete based on parent node
     deleteBtn.addEventListener("click", (e) => {
@@ -84,12 +95,6 @@ function displayBook(book) {
         e.target.parentNode.remove();
     }
     );
-
-
-    const readStatusBtn = document.createElement("button");
-
-    // 05.12.24 add default class for read status (for use later for "on") 
-    readStatusBtn.classList.add("read-status");
 
     if (book.read === true) {
         readStatusBtn.classList.add("read");
@@ -114,14 +119,24 @@ function displayBook(book) {
     bookAuthor.innerHTML = book.author;
     bookPages.innerHTML = book.pages;
 
-    bookDisplay.classList.add("book");
-    bookDisplay.classList.add(generateRandomStyle());
+    // bookDisplay.classList.add("book");
+    bookImageContainer.classList.add(generateRandomStyle());
+    bookImageContainer.classList.add("book-card--image");
 
-    bookDisplay.appendChild(bookTitle);
-    bookDisplay.appendChild(bookAuthor);
-    bookDisplay.appendChild(bookPages);
-    bookDisplay.appendChild(deleteBtn);
-    bookDisplay.appendChild(readStatusBtn);
-    library.appendChild(bookDisplay);
+
+    bookCard.classList.add("book-card");
+
+    bookCard.appendChild(bookImageContainer);
+    bookCard.appendChild(bookInfoContainer);
+    bookCard.appendChild(bookOptionsContainer);
+
+    bookInfoContainer.appendChild(bookTitle);
+    bookInfoContainer.appendChild(bookAuthor);
+    bookInfoContainer.appendChild(bookPages);
+
+    bookOptionsContainer.appendChild(deleteBtn);
+    bookOptionsContainer.appendChild(readStatusBtn);
+
+    library.appendChild(bookCard);
 
 }

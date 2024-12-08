@@ -34,6 +34,9 @@ Optional:
 - add icons (not svg)
 - try dark/light mode
 
+Thoughts: 
+- Simplistic style. Look at other libraries for inspiration (Roehampton?)
+
 Approach: 
 
 Log: 

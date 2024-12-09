@@ -84,15 +84,15 @@ function displayBook(book) {
 
     // Need to add event listener on creation.
     // Trying to add eventlistener after creation caused issues
-    deleteBtn.classList.add("deleteBtn");
+    deleteBtn.classList.add("btn-delete");
 
     // 05.12.24 add default class for read status (for use later for "on") 
     readStatusBtn.classList.add("read-status");
 
     // Delete based on parent node
     deleteBtn.addEventListener("click", (e) => {
-        delete myLibrary[e.target.parentNode.firstChild.innerHTML];
-        e.target.parentNode.remove();
+        delete myLibrary[e.target.parentNode.previousSibling.firstChild.innerHTML];
+        e.target.parentNode.parentNode.remove();
     }
     );
 

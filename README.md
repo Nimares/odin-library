@@ -20,6 +20,8 @@ TO-DO: HTML/JS
             * 1 class for button style, and 2 different classes based on read-status
             * read-status button color edited via css 
 6. style: General page layout
+    - Change to card-style layout
+    - 
 7. optional: darkmode & responsive design. 
 8. final: review and assessment 
     Goal: 
@@ -43,4 +45,10 @@ Log:
 - 07.12.24: 
     Goal: reorganize book structure. Currently site is functional, but it does not look appealing. Responsive elements are too responsive. 
 
-    Approach: Remove visual aspects. Make a working card-style display. Once this is working, I can re-add styles. 
+    Approach: Remove visual aspects. Make a working card-style display. Once this is working, I can re-add styles.
+
+- 07.12.24
+    * Solution: Changed to card view
+    * Problem: Delete button targeting parent element.
+        - Goal: Change more robust way of removing book. Independent of page format
+        - Attempt: Delete based of

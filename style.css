@@ -30,16 +30,6 @@ html {
     ;
 }
 
-/* .book {
-    background-size: contain;
-    background-color: rgba(0, 0, 0, 0);
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-left: 35%;
-    padding-top: 10%;
-    border: 5px solid black
-} */
-
 .book-card {
     border: 5px black dotted;
     display: flex;
@@ -90,25 +80,6 @@ html {
     display: flex;
     column-gap: 3em;
     align-items: center;
-}
-
-/* .read-status {} */
-.not-read {
-    background-image: url("img/glasses-off-svgrepo-com.svg");
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    background-position: center;
-    background-color: red;
-}
-
-.read {
-    background-image: url("img/glasses-svgrepo-com.svg");
-    width: 100px;
-    height: 100px;
-    background-size: contain;
-    background-position: center;
-    background-color: green;
 }
 
 /* The switch - box around the slider */

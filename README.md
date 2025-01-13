@@ -41,7 +41,7 @@ Thoughts:
 
 Approach: 
 
-Log: 
+Progress and process log: 
 - 07.12.24: 
     Goal: reorganize book structure. Currently site is functional, but it does not look appealing. Responsive elements are too responsive. 
 
@@ -51,4 +51,10 @@ Log:
     * Solution: Changed to card view
     * Problem: Delete button targeting parent element.
         - Goal: Change more robust way of removing book. Independent of page format
-        - Attempt: Delete based of
+
+- 13.01.25
+    * Plan: [X] Restructure book element layout and style. 
+            [] Complete general page layout and style 
+            [] Make a cleaner dialog / modal apperance.
+                - Additionally, make it so that each dialog option starts fresh
+

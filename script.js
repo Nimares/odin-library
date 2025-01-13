@@ -80,30 +80,32 @@ function displayBook(book) {
     const bookAuthor = document.createElement("p");
     const bookPages = document.createElement("p");
     const readStatus = document.createElement("div");
-    readStatus.classList.add("read-status");
     const readStatusPara = document.createElement("span");
+    readStatus.classList.add("read-status");
 
 
     // Delete based DOM traversal
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
-
     deleteBtn.addEventListener("click", (e) => {
         delete myLibrary[e.target.parentNode.previousSibling.firstChild.innerHTML];
         e.target.parentNode.parentNode.remove();
     }
     );
 
+    // read status toggle switch
     const readStatusSwitch = document.createElement("label");
-    readStatusSwitch.classList.add("switch");
     const readStatusCheckbox = document.createElement("input");
-    readStatusCheckbox.type = "checkbox"
     const readStatusSlider = document.createElement("span");
+    readStatusCheckbox.type = "checkbox"
+
+    readStatusSwitch.classList.add("switch");
     readStatusSlider.classList.add("slider");
 
     readStatusSwitch.appendChild(readStatusCheckbox);
     readStatusSwitch.appendChild(readStatusSlider);
 
+    // read initial book status
     if (book.read) {
         readStatusCheckbox.checked = true;
         readStatusPara.textContent = "Read"
@@ -112,6 +114,7 @@ function displayBook(book) {
         readStatusPara.textContent = "Not read";
     }
 
+    // change status on storage object and page display
     readStatusSwitch.addEventListener("click", (e) => {
         if (e.target.checked) {
             readStatusSwitch.previousSibling.textContent = "Read";
@@ -134,11 +137,12 @@ function displayBook(book) {
     bookCard.appendChild(bookInfoContainer);
     bookCard.appendChild(bookOptionsContainer);
 
+    readStatus.appendChild(readStatusPara);
+    readStatus.appendChild(readStatusSwitch);
+
     bookInfoContainer.appendChild(bookTitle);
     bookInfoContainer.appendChild(bookAuthor);
     bookInfoContainer.appendChild(bookPages);
-    readStatus.appendChild(readStatusPara);
-    readStatus.appendChild(readStatusSwitch);
     bookInfoContainer.appendChild(readStatus);
 
     bookOptionsContainer.appendChild(deleteBtn);

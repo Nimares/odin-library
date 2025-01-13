@@ -22,6 +22,11 @@ html {
     background-color: var(--bgc);
 }
 
+header img {
+    width: 100px;
+    height: 100px;
+}
+
 .library {
     display: grid;
     gap: 1rem;

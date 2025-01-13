@@ -3,7 +3,7 @@ const myLibrary = {
     book1: { title: "book1", author: "JRR", pages: 1137, read: false },
     book2: { title: "book2", author: "book2-author", pages: 666, read: false },
     book3: { title: "book3", author: "book3-author", pages: 666, read: false },
-    book4: { title: "book4", author: "book4-author", pages: 666, read: false },
+    book4: { title: "book4", author: "book4-author", pages: 666, read: true },
 }
 
 const library = document.querySelector(".library");
@@ -68,62 +68,66 @@ function generateRandomStyle() {
 
 // Adds book to library display
 function displayBook(book) {
+
+    // Book Card
     const bookCard = document.createElement("div");
     const bookImageContainer = document.createElement("div");
     const bookInfoContainer = document.createElement("div");
     const bookOptionsContainer = document.createElement("div");
 
-    // const bookDisplay = document.createElement("div"); // Alter name in all areas
+    // Information
     const bookTitle = document.createElement("h2");
     const bookAuthor = document.createElement("p");
     const bookPages = document.createElement("p");
+    const readStatus = document.createElement("div");
+    readStatus.classList.add("read-status");
+    const readStatusPara = document.createElement("span");
 
 
+    // Delete based DOM traversal
     const deleteBtn = document.createElement("button");
-    const readStatusBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete";
 
-    // Need to add event listener on creation.
-    // Trying to add eventlistener after creation caused issues
-    deleteBtn.classList.add("btn-delete");
-
-    // 05.12.24 add default class for read status (for use later for "on") 
-    readStatusBtn.classList.add("read-status");
-
-    // Delete based on parent node
     deleteBtn.addEventListener("click", (e) => {
         delete myLibrary[e.target.parentNode.previousSibling.firstChild.innerHTML];
         e.target.parentNode.parentNode.remove();
     }
     );
 
-    if (book.read === true) {
-        readStatusBtn.classList.add("read");
+    const readStatusSwitch = document.createElement("label");
+    readStatusSwitch.classList.add("switch");
+    const readStatusCheckbox = document.createElement("input");
+    readStatusCheckbox.type = "checkbox"
+    const readStatusSlider = document.createElement("span");
+    readStatusSlider.classList.add("slider");
+
+    readStatusSwitch.appendChild(readStatusCheckbox);
+    readStatusSwitch.appendChild(readStatusSlider);
+
+    if (book.read) {
+        readStatusCheckbox.checked = true;
+        readStatusPara.textContent = "Read"
     } else {
-        readStatusBtn.classList.add("not-read");
+        readStatusCheckbox.checked = false;
+        readStatusPara.textContent = "Not read";
     }
 
-
-    // Simplified function. Alter read status then toggle both classes
-    readStatusBtn.addEventListener("click", () => {
-        if (book.read === true) {
-            book.read = false
+    readStatusSwitch.addEventListener("click", (e) => {
+        if (e.target.checked) {
+            readStatusSwitch.previousSibling.textContent = "Read";
+            book.read = true;
         } else {
-            book.read = true
+            readStatusSwitch.previousSibling.lastChild.textContent = "Not read";
+            book.read = false;
         }
-        readStatusBtn.classList.toggle("not-read");
-        readStatusBtn.classList.toggle("read");
-    })
-
+    });
 
     bookTitle.innerHTML = book.title;
     bookAuthor.innerHTML = book.author;
     bookPages.innerHTML = book.pages;
 
-    // bookDisplay.classList.add("book");
     bookImageContainer.classList.add(generateRandomStyle());
     bookImageContainer.classList.add("book-card--image");
-
-
     bookCard.classList.add("book-card");
 
     bookCard.appendChild(bookImageContainer);
@@ -133,9 +137,11 @@ function displayBook(book) {
     bookInfoContainer.appendChild(bookTitle);
     bookInfoContainer.appendChild(bookAuthor);
     bookInfoContainer.appendChild(bookPages);
+    readStatus.appendChild(readStatusPara);
+    readStatus.appendChild(readStatusSwitch);
+    bookInfoContainer.appendChild(readStatus);
 
     bookOptionsContainer.appendChild(deleteBtn);
-    bookOptionsContainer.appendChild(readStatusBtn);
 
     library.appendChild(bookCard);
 

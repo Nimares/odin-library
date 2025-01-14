@@ -18,7 +18,10 @@ TO-DO: HTML/JS
                 mode (default style vs dark mode) or have function check read read-status boolean
                 and then react based on this seperated style classes for button. 
             * 1 class for button style, and 2 different classes based on read-status
-            * read-status button color edited via css 
+            * read-status button color edited via css
+        - 13.01.25
+            * used toggle switch rather than button. 
+            * no need for seperate style classes. Button style changed based on checked attribute. 
 6. style: General page layout
     - Change to card-style layout
     - 
@@ -57,4 +60,3 @@ Progress and process log:
             [] Complete general page layout and style 
             [] Make a cleaner dialog / modal apperance.
                 - Additionally, make it so that each dialog option starts fresh
-

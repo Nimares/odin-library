@@ -24,7 +24,7 @@ TO-DO: HTML/JS
             * no need for seperate style classes. Button style changed based on checked attribute. 
 6. style: General page layout
     - Change to card-style layout
-    - 
+    - Cardstyle and layout
 7. optional: darkmode & responsive design. 
 8. final: review and assessment 
     Goal: 
@@ -57,6 +57,23 @@ Progress and process log:
 
 - 13.01.25
     * Plan: [X] Restructure book element layout and style. 
-            [] Complete general page layout and style 
-            [] Make a cleaner dialog / modal apperance.
-                - Additionally, make it so that each dialog option starts fresh
+    * Progress: Finished toggle button
+
+- 14.01.25
+    * Plan: [] Page layout
+                [] Structure
+                [] Colors (variables)
+            [] Book card
+                [] Structure
+                [] Toggle button apperance
+                [] Delete button? (inc "Are you sure?" modal)
+                [] Text auto formatting?
+            [] Finishing details
+                [] Dark mode
+                [] Responsive design
+                [] Fonts
+            [] Review and Assesment
+                [] HTML / CSS checker
+                [] Compare to other students
+                [] Refactor
+                [] README / CSS structure. 

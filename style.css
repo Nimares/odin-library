@@ -5,6 +5,13 @@
     --book-color: salmon;
     --not-read-color: #f86368;
     --read-color: #00ba37;
+    --color-white: #ffffff;
+    --color-green-1200: #00211b;
+    --color-green-600: #27ddbb;
+    --color-green-900: #00866d;
+    --color-primary: var(--color-green-1200);
+    --color-secondary: var(--color-green-600);
+    --color-link-hover: var(--color-green-900);
 }
 
 * {
@@ -16,15 +23,60 @@ html {
     min-height: 100vh;
 }
 
-.library-container {
-    height: 100vh;
-    width: 100%;
-    background-color: var(--bgc);
+/* Need to decide on styling later */
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    padding: 1rem 2rem 0;
+    height: 100px;
+    margin-bottom: 10px;
+    border-bottom: 1px #E5E5E5 solid;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 8px 0px;
 }
 
 header img {
-    width: 100px;
-    height: 100px;
+    height: 100%;
+}
+
+
+.header-left,
+.header-right {
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+}
+
+.header-actions {
+    list-style-type: none;
+    display: flex;
+    align-self: end;
+}
+
+.header-actions li {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+/* -5px margin bottom to align icon with text */
+.icon svg {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-bottom: -5px;
+    fill: var(--color-primary)
+}
+
+.library-container {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-white);
+    padding-bottom: 1rem;
 }
 
 .library {
@@ -36,10 +88,12 @@ header img {
 }
 
 .book-card {
-    border: 5px black dotted;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    border-radius: 5px;
+
 }
 
 .book-card--image {

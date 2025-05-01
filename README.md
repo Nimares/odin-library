@@ -32,48 +32,14 @@ TO-DO: HTML/JS
         2 - Refactor 
         3 - Look at other students projects
         4 - Closing thoughts
+9. Added JS classes
+    - js classes used rather than object constructor for book. 
+
+Future ideas/Note to self
+- add methods and similar to book class? for adding read status etc? 
 
 Optional: 
 - try some of the css methods you've seen for responsive design (link to video)
 - try some css methods from previous lessons
 - add icons (not svg)
 - try dark/light mode
-
-Thoughts: 
-- Simplistic style. Look at other libraries for inspiration (Roehampton?)
-
-Approach: 
-
-Progress and process log: 
-- 07.12.24: 
-    Goal: reorganize book structure. Currently site is functional, but it does not look appealing. Responsive elements are too responsive. 
-
-    Approach: Remove visual aspects. Make a working card-style display. Once this is working, I can re-add styles.
-
-- 07.12.24
-    * Solution: Changed to card view
-    * Problem: Delete button targeting parent element.
-        - Goal: Change more robust way of removing book. Independent of page format
-
-- 13.01.25
-    * Plan: [X] Restructure book element layout and style. 
-    * Progress: Finished toggle button
-
-- 14.01.25
-    * Plan: [] Page layout
-                [] Structure
-                [] Colors (variables)
-            [] Book card
-                [] Structure
-                [] Toggle button apperance
-                [] Delete button? (inc "Are you sure?" modal)
-                [] Text auto formatting?
-            [] Finishing details
-                [] Dark mode
-                [] Responsive design
-                [] Fonts
-            [] Review and Assesment
-                [] HTML / CSS checker
-                [] Compare to other students
-                [] Refactor
-                [] README / CSS structure. 

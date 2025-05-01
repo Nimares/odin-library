@@ -39,12 +39,21 @@ confirmBtn.addEventListener("click", (event) => {
     bookDialog.close();
 });
 
-// Book constructor function
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+// Book class declaration
+// function Book(title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// }
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 // Loops through myLibrary object, and displays each book on the page
